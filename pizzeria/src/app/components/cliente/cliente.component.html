@@ -1,0 +1,101 @@
+
+
+
+<header>
+<div class="container header inner">
+			<nav class="navbar">
+			  <div class="container">
+			    <div class="navbar-header">
+      <a class="navbar-brand" href="/cliente">Volver</a>
+    </div>
+          <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                        
+			      </button>
+			    
+			    </div>
+		 <div class="collapse navbar-collapse" id="myNavbar">
+			      <ul class="nav navbar-nav navbar-right masthead-nav">
+			           <li><a routerLink="/alta-pedido" routerLinkActive="active">Pedido</a></li>
+                    <li><a routerLink="/alta-reserva" routerLinkActive="active">Reserve</a></li>
+                    <li><a routerLink="/alta-evento" routerLinkActive="active">Evento</a></li>
+      <li><a routerLink="/locales" routerLinkActive="active">Locales</a></li>
+      <li><a  [routerLink]="[]" (click)="salir()" routerLinkActive="active">«Desloguearse»</a></li>
+			   
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+			</div>
+		</header>
+		
+	<div id="mySidenav" class="sidenav">
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		  <a href="#">About</a>
+		  <a href="#">Services</a>
+		  <a href="#">Clients</a>
+		  <a href="#">Contact</a>
+		</div>
+
+		<span style="font-size:30px;cursor:pointer;float:right;color:#fff;position:absolute;top:5%;right: 10px;" onclick="openNav()">☰</span>
+<!-- fin menu -->
+<br/>
+<br/>
+
+<div class="container contenedor">
+    <br>
+    <div class="row container">
+        <div (click) = "altaPedido()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+				<div >
+				    <h4 class="">PEDIDO</h4>
+				</div>
+				<div class="panel-body">
+				    Realice su pedido en el local que desee.
+					<hr>
+				    <img src="../../assets/img/abmpedidos.jpg" alt="" class="img-rounded img-responsive">
+				</div>
+				<!-- <div class="panel-footer">Panel footer</div> -->
+			</div>
+        </div>
+        <div (click) = "altaReserva()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div >
+                    <h4 class="">RESERVA</h4>
+                </div>
+                <div class="panel-body">
+					Solicite su reserva de mesa en cualquiera de nuestros locales.
+					<br><hr>
+					<img src="../../assets/img/reserva.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+            </div>
+        </div>
+        <div (click) = "altaEvento()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div>
+                    <h4 class="">EVENTO</h4>
+                </div>
+                <div class="panel-body">
+                	 Todo lo necesario para su fiesta con 48hs de anticipación.
+                	<br><hr>
+                	<img src="../../assets/img/evento.jpg">
+                </div>
+            </div>
+        </div>
+        <div (click) = "locales()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div>
+                    <h4 class="">Nuestros Locales</h4>
+                </div>
+                <div class="panel-body">
+                    Verifique la distancia hacia nuestros locales.
+                    <hr>
+                    <img src="../../assets/img/abmlocales.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+                <!-- <div class="panel-footer">Panel footer</div> -->
+            </div>
+        </div>
+    </div>
+</div>
