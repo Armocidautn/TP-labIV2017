@@ -1,63 +1,109 @@
-<app-menu></app-menu>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBIeNMEOoYQEDL4S5GlKKP9EcUiOCNr3A&callback=initMap"
-  type="text/javascript"></script>
+<header>
+<div class="container header inner">
+			<nav class="navbar">
+			  <div class="container">
+			    <div class="navbar-header">
+      <a class="navbar-brand" href="/cliente">Volver</a>
+    </div>
+          <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                        
+			      </button>
+			    
+			    </div>
+		 <div class="collapse navbar-collapse" id="myNavbar">
+			      <ul class="nav navbar-nav navbar-right masthead-nav">
+			           <li><a routerLink="/alta-pedido" routerLinkActive="active">Pedido</a></li>
+                    <li><a routerLink="/alta-reserva" routerLinkActive="active">Reserve</a></li>
+                    <li><a routerLink="/alta-evento" routerLinkActive="active">Evento</a></li>
+      <li><a routerLink="/locales" routerLinkActive="active">Locales</a></li>
+      <li><a  [routerLink]="[]" (click)="salir()" routerLinkActive="active">«Desloguearse»</a></li>
+			   
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+			</div>
+		</header>
+		
+	<div id="mySidenav" class="sidenav">
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		  <a href="#">About</a>
+		  <a href="#">Services</a>
+		  <a href="#">Clients</a>
+		  <a href="#">Contact</a>
+		</div>
+
+		<span style="font-size:30px;cursor:pointer;float:right;color:#fff;position:absolute;top:5%;right: 10px;" onclick="openNav()">☰</span>
+<!-- fin menu -->
 <div class="container contenedor">
     <br>
-    <div class="row container">
-        <div (click) = "solera()" class="col-md-3">
+    <div class="row container"  style="width: 100%; margin: 0 auto;">
+        <div (click) = "centenario()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
-				<div class="panel-heading">
-				    <h4 class="">Pizzería Solera</h4>
-				</div>
-				<div class="panel-body">
-				    Realice su pedido en el local que desee.
-					<hr>
-				    <img src="../../assets/img/Pizzerias/Solera.jpg" alt="" class="img-rounded img-responsive">
-				</div>
-				<!-- <div class="panel-footer">Panel footer</div> -->
-			</div>
+        <div class="panel-heading">
+            <h4 class="">Av. Centenario 512</h4>
         </div>
-        <div (click) = "lavitola()" class="col-md-3">
+        <div class="panel-body seleccion">
+            <img src="../../assets/img/Pizzerias/Solera.jpg" alt="" class="img-rounded img-responsive">
+        </div>
+        <!-- <div class="panel-footer">Panel footer</div> -->
+      </div>
+        </div>
+        <div (click) = "alvear()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
                 <div class="panel-heading">
-                    <h4 class="">Pizzería La Vitola</h4>
+                    <h4 class="">Alvear 2894</h4>
                 </div>
-                <div class="panel-body">
-					Solicite su reserva de mesa en cualquiera de nuestros locales.
-					<br><hr>
-					<img src="../../assets/img/Pizzerias/LaVitola.jpg" alt="" class="img-rounded img-responsive">
+                <div class="panel-body seleccion">
+          <img src="../../assets/img/Pizzerias/LaVitola.jpg" alt="" class="img-rounded img-responsive">
                 </div>
             </div>
         </div>
-        <div (click) = "prontopizza()" class="col-md-3">
+        <div (click) = "rivadavia()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
                 <div class="panel-heading">
-                    <h4 class="">Pizzería Pronto Pizza</h4>
+                    <h4 class="">Av. Rivadavia 11704</h4>
                 </div>
-                <div class="panel-body">
-                    Verifique la distancia hacia nuestros locales.
-                    <hr>
+                <div class="panel-body seleccion">
                     <img src="../../assets/img/Pizzerias/ProntoPizza.jpg" alt="" class="img-rounded img-responsive">
                 </div>
                 <!-- <div class="panel-footer">Panel footer</div> -->
             </div>
         </div>
-        <div (click) = "lareypizzas()" class="col-md-3">
+        <div (click) = "galicia()" class="col-md-3">
             <div class="panel panel-info" style="cursor: pointer;">
                 <div class="panel-heading">
-                    <h4 class="">Pizzería La Rey Pizzas</h4>
+                    <h4 class="">Av. Galicia 597</h4>
                 </div>
-                <div class="panel-body">
-                    Verifique la distancia hacia nuestros locales.
-                    <hr>
+                <div class="panel-body seleccion">
                     <img src="../../assets/img/Pizzerias/LaRey.jpg" alt="" class="img-rounded img-responsive">
                 </div>
                 <!-- <div class="panel-footer">Panel footer</div> -->
             </div>
         </div>
+        <div class="container" style="width: 100%; margin: 0 auto;">
+      <div class="form-group">
+        <input placeholder="Enter source location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #pickupInput [formControl]="destinationInput">
+        <input placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" [(ngModel)]="locacion" class="form-control" #pickupOutput [formControl]="destinationOutput" >
+      </div>
+       <sebm-google-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom"  >
+                <!-- <sebm-google-map-marker [latitude]="latitude" [longitude]="longitude" [iconUrl]="iconurl">
+                    <sebm-google-map-info-window>
+                        <strong>InfoWindow content</strong>
+                    </sebm-google-map-info-window>
+                </sebm-google-map-marker> -->
+                <sebm-google-map-directions [origin]="origin" [destination]="destination">
+                  <sebm-google-map-info-window [disableAutoPan]="true">
+                    Hi, this is the content of the <strong>info window</strong>
+                  </sebm-google-map-info-window>
+
+                </sebm-google-map-directions>
+              </sebm-google-map>
+    </div>
     </div>
 </div>
 
-<sebm-google-map [latitude]="lat" [longitude]="lng">
-  <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
-</sebm-google-map>
+    
