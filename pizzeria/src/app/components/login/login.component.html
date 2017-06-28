@@ -1,0 +1,174 @@
+<!--
+    you can substitue the span of reauth email for a input with the email and
+    include the remember me checkbox
+    -->
+    
+      <header>
+		
+      <div class="container header inner">
+			<nav class="navbar">
+			  <div class="container">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                        
+			      </button>
+			      <a class="navbar-brand" href="#">CRAZY PIZZA</a>
+			    </div>
+		 <div class="collapse navbar-collapse" id="myNavbar">
+			      <ul class="nav navbar-nav navbar-right masthead-nav">
+			        <li><a (click)="mostrarLogin()"> Login</a></li>
+			       <li><a (click)="mostrarsabores()"> Sabores</a></li>
+			   
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+			</div>
+		</header>
+		<div id="mySidenav" class="sidenav">
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		  <a href="#">About</a>
+		  <a href="#">Services</a>
+		  <a href="#">Clients</a>
+		  <a href="#">Contact</a>
+		 <li><a (click)="mostrarLogin()"> Login</a></li>
+		<li><a (click)="mostrarsabores()"> Sabores</a></li>
+    </div>
+
+		<span style="font-size:30px;cursor:pointer;float:right;color:#fff;position:absolute;top:5%;right: 10px;" onclick="openNav()">☰</span>
+<!--
+		<div class="container-fluid tabStrip">
+		  <ul class="nav nav-tabs text-center">
+		    <li class="col-sm-3 grey"><a href="#"><i class="fa fa-truck fa-2x col-sm-12"></i><span class="col-sm-12">Packers and Movers</span></a></li>
+		    <li class="col-sm-3 orange"><a href="#"><i class="fa fa-ship fa-2x col-sm-12"></i><span class="col-sm-12">Cargo</span></a></li>
+		    <li class="col-sm-3 blue"><a href="#"><i class="fa fa-building fa-2x col-sm-12"></i><span class="col-sm-12">Warehouse</span></a></li>
+		    <li class="col-sm-3 green"><a href="#"><i class="fa fa-building fa-2x col-sm-12"></i><span class="col-sm-12">Transport</span></a></li>
+		  </ul>
+		</div>
+-->
+	<div *ngIf="botonyesnosabores">
+  <div class="item active">
+          <img src=".././assets/img/precios.jpg" width="100%;">
+    </div>
+     </div>     
+       
+  <div *ngIf="botonyesnomenu">
+  <div class="container-fluid tabSlider">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+        <ul class="nav nav-pills nav-justified">
+          <li data-target="#myCarousel" data-slide-to="0" ><a href="#"><i class="fa fa-cutlery fa-2x col-sm-14" style="color:white;"></i></a></li>
+          <li data-target="#myCarousel" data-slide-to="1"><a href="#"><i class="fa fa-motorcycle fa-2x col-sm-14" style="color:white;"></i></a></li>
+          <li data-target="#myCarousel" data-slide-to="2"><a href="#"><i class="fa fa-map-marker  fa-2x col-sm-14" style="color:white;"></i></a></li>
+      
+        </ul>
+
+
+ 
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+      
+        <div class="item active">
+          <img src=".././assets/img/gustos.jpg" width="100%;">
+           <div class="carousel-caption">
+            <h2>SABORES</h2>
+          
+          </div>
+        </div><!-- End Item -->
+ 
+         <div class="item">
+          <img src=".././assets/img/delivery.jpg" width="100%;">
+           <div class="carousel-caption">
+            <h2>DELIVERY</h2>
+           
+          </div>
+        </div><!-- End Item -->
+        
+        <div class="item">
+          <img src=".././assets/img/local.jpg" width="100%;">
+           <div class="carousel-caption">
+            <h2>LOCALES</h2>
+            
+          </div>
+        </div><!-- End Item -->
+        
+      
+                
+      </div><!-- End Carousel Inner -->
+
+
+	</div>
+	
+  
+  
+  </div>
+     
+      </div>
+    <div *ngIf="botonyesno">
+     
+    <div  class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card" src="../../assets/img/usuario.jpeg" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form (ngSubmit)="enviar()" class="form-signin">
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Elija el Usuario
+                  <span class="caret"></span></button>
+                  <ul style="cursor: pointer;" class="dropdown-menu">
+                  <li><a (click)="administrador()" value="Administrador">Administrador</a></li>
+                  <li><a (click)="encargado()" value="Encargado">Encargado</a></li>
+                  <li><a (click)="empleado()" value="Empleado">Empleado</a></li>
+                  <li><a (click)="cliente()" value="Cliente">Cliente</a></li>
+                  </ul>
+                </div>             
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="email" [(ngModel)]="user.email" name='email' id="inputEmail3" class="form-control" placeholder="Email address" required autofocus>
+
+                <input type="password" [(ngModel)]="user.clave" name="clave" required
+                class="form-control" id="inputPassword3" placeholder="Password">
+                <button class="btn btn-signin" type="submit">Ingresar</button>
+            </form><!-- /form -->
+            <a style="cursor: pointer;" (click)="registrar()" data-toggle="modal" data-target="#myModal" value="Cliente">¿Querés obtener beneficios de CrazzyPizza? Registrate!</a>
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+ </div>
+<!--
+    <form  (ngSubmit)="enviar()" class="form-horizontal col-sm-8">
+      <div class="form-group row" >
+        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" [(ngModel)]="user.email" name='email' required
+          class="form-control" id="inputEmail3" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" [(ngModel)]="user.clave" name="clave" required
+          class="form-control" id="inputPassword3" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-default btn-auth" >Ingresar</button>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <a (click)="registrar()" class="btn btn-default btn-auth" >Registrar</a>
+        </div>
+      </div>
+      <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tipo de Usuario
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+      <li><a (click)="administrador()" value="Administrador">Administrador</a></li>
+      <li><a (click)="encargado()" value="Encargado">Encargado</a></li>
+      <li><a (click)="empleado()" value="Empleado">Empleado</a></li>
+      <li><a (click)="cliente()" value="Cliente">Cliente</a></li>
+      </ul>
+    </div>
+    </form>-->

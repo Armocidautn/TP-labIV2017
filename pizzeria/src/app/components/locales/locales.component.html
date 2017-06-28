@@ -1,0 +1,63 @@
+<app-menu></app-menu>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBIeNMEOoYQEDL4S5GlKKP9EcUiOCNr3A&callback=initMap"
+  type="text/javascript"></script>
+<div class="container contenedor">
+    <br>
+    <div class="row container">
+        <div (click) = "solera()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+				<div class="panel-heading">
+				    <h4 class="">Pizzería Solera</h4>
+				</div>
+				<div class="panel-body">
+				    Realice su pedido en el local que desee.
+					<hr>
+				    <img src="../../assets/img/Pizzerias/Solera.jpg" alt="" class="img-rounded img-responsive">
+				</div>
+				<!-- <div class="panel-footer">Panel footer</div> -->
+			</div>
+        </div>
+        <div (click) = "lavitola()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">Pizzería La Vitola</h4>
+                </div>
+                <div class="panel-body">
+					Solicite su reserva de mesa en cualquiera de nuestros locales.
+					<br><hr>
+					<img src="../../assets/img/Pizzerias/LaVitola.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+            </div>
+        </div>
+        <div (click) = "prontopizza()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">Pizzería Pronto Pizza</h4>
+                </div>
+                <div class="panel-body">
+                    Verifique la distancia hacia nuestros locales.
+                    <hr>
+                    <img src="../../assets/img/Pizzerias/ProntoPizza.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+                <!-- <div class="panel-footer">Panel footer</div> -->
+            </div>
+        </div>
+        <div (click) = "lareypizzas()" class="col-md-3">
+            <div class="panel panel-info" style="cursor: pointer;">
+                <div class="panel-heading">
+                    <h4 class="">Pizzería La Rey Pizzas</h4>
+                </div>
+                <div class="panel-body">
+                    Verifique la distancia hacia nuestros locales.
+                    <hr>
+                    <img src="../../assets/img/Pizzerias/LaRey.jpg" alt="" class="img-rounded img-responsive">
+                </div>
+                <!-- <div class="panel-footer">Panel footer</div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<sebm-google-map [latitude]="lat" [longitude]="lng">
+  <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+</sebm-google-map>
