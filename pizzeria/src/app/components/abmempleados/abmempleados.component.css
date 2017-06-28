@@ -1,0 +1,164 @@
+ng2-smart-table{
+	font-size: 20px;
+color: white;
+
+}
+
+/*menu estilo */
+
+header {
+  background: url(https://s8.postimg.org/lo751mgx1/fotoprincipal.jpg)no-repeat; 
+background-size:100% 100%;  
+
+  width: 100%;
+  height: 300px;
+  background-color: #060;
+  color: #fff;
+  position: relative;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+ 
+}
+.header {
+  width: 100%;
+  height: 100%; 
+  min-height: 100%;
+  background: rgba(0, 0, 0, 0.2) ;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  box-shadow: inset 0 0 100px rgba(255,57,43,.8);
+}
+.navbar-brand{
+    font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  font-style: italic;
+position: absolute;  
+left: 20px; 
+
+}
+.inner {
+  padding: 30px;
+}
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  color:#fff;
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  color: #fff;
+  border-bottom-color: #fff;
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+@media (min-width: 768px) {
+  .navbar-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+@media (max-width: 768px) {
+	  .navbar-toggle{
+  	background: #000 !important;
+  }
+}
+
+/*
+.tabStrip{
+	background: #f3eee9;
+	border: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+.grey{
+	background: grey;
+}
+.blue{
+	background: #00BFFF;
+}
+.orange{
+	background: #FF8C00;
+}
+.green{
+	background: #6B8E23;
+}
+.tabStrip ul li a{
+	color: #fff;
+}
+.tabStrip ul li a:hover{
+	border: none;
+	background: none;
+}
+*/
+/* side slide menu */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+  .boton_personalizado{
+margin-left: 44%;
+  margin-right: 44%;
+  
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: rgba(0,0,0,.7);
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }
+
+
