@@ -58,6 +58,11 @@ export class ClienteComponent implements OnInit {
     //  }
   
   }
-
+  salir()
+  {
+    localStorage.setItem('token', null);
+    window.alert('Hasta Luego!!!');
+    this.router.navigate(['/login']);
+  }
 
 }

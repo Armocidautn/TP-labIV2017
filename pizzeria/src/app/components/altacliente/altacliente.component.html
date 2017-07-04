@@ -1,43 +1,5 @@
 
-<header>
-<div class="container header inner">
-			<nav class="navbar">
-			  <div class="container">
-			    <div class="navbar-header">
-      <a class="navbar-brand" href="/empleado">Volver</a>
-    </div>
-          <div class="navbar-header">
-			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>                        
-			      </button>
-			    
-			    </div>
-		 <div class="collapse navbar-collapse" id="myNavbar">
-			      <ul class="nav navbar-nav navbar-right masthead-nav">
-			          <li><a routerLink="/altacliente" routerLinkActive="active">Alta De Clientes</a></li>
-                    <li><a routerLink="/altapedidos" routerLinkActive="active">Alta De Pedidos </a></li>
-                    <li><a routerLink="/altaproductos" routerLinkActive="active">Alta De Productos</a></li>
-      <li><a  [routerLink]="[]" (click)="salir()" routerLinkActive="active">«Desloguearse»</a></li>
-			   
-			      </ul>
-			    </div>
-			  </div>
-			</nav>
-			</div>
-		</header>
-		
-	<div id="mySidenav" class="sidenav">
-		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-		  <a href="#">About</a>
-		  <a href="#">Services</a>
-		  <a href="#">Clients</a>
-		  <a href="#">Contact</a>
-		</div>
-
-		<span style="font-size:30px;cursor:pointer;float:right;color:#fff;position:absolute;top:5%;right: 10px;" onclick="openNav()">☰</span>
-<!-- fin menu -->
+<app-menu></app-menu>
 <br/>
 <br/>
 <!DOCTYPE html>

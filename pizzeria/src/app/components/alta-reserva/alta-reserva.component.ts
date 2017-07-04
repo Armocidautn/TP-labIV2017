@@ -73,5 +73,11 @@ export class AltaReservaComponent implements OnInit {
     }
     return urljson;
   }
+salir()
+  {
+    localStorage.setItem('token', null);
+    window.alert('Hasta Luego!!!');
+    this.router.navigate(['/login']);
+  }
 
 }
