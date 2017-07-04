@@ -1,18 +1,54 @@
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/pagina1">Home</a>
+<header>
+<div class="container header inner">
+			<nav class="navbar">
+			  <div class="container">
+			    <div class="navbar-header">
+    
     </div>
-    <ul class="nav navbar-nav">
-      <li><a routerLink="/alta-pedido" routerLinkActive="active">Pedido</a></li>
-      <li><a routerLink="/alta-reserva" routerLinkActive="active">Reserva</a></li>
-      <li><a routerLink="/alta-evento" routerLinkActive="active">Evento</a></li>
-      <li><a routerLink="/locales" routerLinkActive="active">Locales</a></li>
-      <li><a style="margin-left: 27cm;" [routerLink]="[]" (click)="salir()" routerLinkActive="active">Logout</a></li>
-    </ul>
-  </div>
-</nav>
+          <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                        
+			      </button>
+			    
+			    </div>
+		 <div class="collapse navbar-collapse" id="myNavbar">
+			      <ul class="nav navbar-nav navbar-right masthead-nav">
+			       
+						 <li *ngIf="TipoAdministrador"><a routerLink="/abmusuarios" routerLinkActive="active">ABM Usuarios</a></li>
+               <li *ngIf="TipoAdministrador"><a routerLink="/abmlocales" routerLinkActive="active">ABM Locales</a></li>
+                    <li *ngIf="TipoAdministrador"><a routerLink="/estadisticas" routerLinkActive="active">Estadísticas</a></li>
+      							
+						<li *ngIf="TipoEncargado"><a routerLink="/abmempleados" routerLinkActive="active">Empleados</a></li>
+            		<li *ngIf="TipoEncargado"><a routerLink="/abmpedidos" routerLinkActive="active">ABM Pedidos</a></li>
+                    <li *ngIf="TipoEncargado"><a routerLink="/abmproductos" routerLinkActive="active">ABM Productos</a></li>
+                   
+    				 <li *ngIf="TipoEmpleado"><a routerLink="/altacliente" routerLinkActive="active">Alta De Clientes</a></li>
+                  <li *ngIf="TipoEmpleado"><a routerLink="/altapedidos" routerLinkActive="active">Alta De Pedidos </a></li>
+                    <li *ngIf="TipoEmpleado"><a routerLink="/altaproductos" routerLinkActive="active">Alta De Productos</a></li>
+
+							<li *ngIf="TipoCliente"><a routerLink="/alta-pedido" routerLinkActive="active">Pedido</a></li>
+                  <li *ngIf="TipoCliente"><a routerLink="/alta-reserva" routerLinkActive="active">Reserva</a></li>
+                    <li *ngIf="TipoCliente"><a routerLink="/alta-evento" routerLinkActive="active">Evento</a></li>	
+		   									 <li *ngIf="TipoCliente"><a routerLink="/locales" routerLinkActive="active">Locales</a></li>
+		 
+		  <li><a  [routerLink]="[]" (click)="salir()" routerLinkActive="active">«Desloguearse»</a></li>
+			   
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+			</div>
+		</header>
+		
+	<div id="mySidenav" class="sidenav">
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		  <a href="#">About</a>
+		  <a href="#">Services</a>
+		  <a href="#">Clients</a>
+		  <a href="#">Contact</a>
+		</div>
+
+		<span style="font-size:30px;cursor:pointer;float:right;color:#fff;position:absolute;top:5%;right: 10px;" onclick="openNav()">☰</span>
+<!-- fin menu -->
